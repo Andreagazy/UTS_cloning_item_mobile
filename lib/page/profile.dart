@@ -19,6 +19,7 @@ class _ProfilePageState extends State<ProfilePage> {
       body: ListView(
         padding: EdgeInsets.all(16),
         children: [
+          SizedBox(height: 20),
           profileHeader(),
           thickLineBreak(),
           settingList('Tipe Akun', 'Basic'),
@@ -59,20 +60,24 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget profileHeader() => Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Andreagazy Iza Amerianto',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              SizedBox(height: 4),
-              Text('22417201', style: TextStyle(color: Colors.grey)),
-            ],
+          Expanded(
+            // Use Expanded to give flexibility to the text
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Andreagazy Iza Amerianto',
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                SizedBox(height: 4),
+                Text('224172016', style: TextStyle(color: Colors.grey)),
+              ],
+            ),
           ),
           ClipOval(
             child: Image.asset(
-              'asset/img/profile.png', // Ensure the path is correct
-              width: 45, // Set width for the image
-              height: 45, // Set height for the image
+              'asset/img/profile.jpg', // Ensure the path is correct
+              width: 40, // Increase the width for better visibility
+              height: 40, // Increase the height for better visibility
               fit: BoxFit.cover, // Ensure the image covers the circle
             ),
           ),
